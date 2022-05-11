@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1651669736 source:/nfs/home/allanf/Documentos/pokedex/arquivo.c
+	<stdio.h>
+	<stdlib.h>
+	"arquivo.h"
+
+1651672278 /nfs/home/allanf/Documentos/pokedex/arquivo.h
+
+1651671394 source:/nfs/home/allanf/Documentos/pokedex/main.c
+	<stdio.h>
+	<stdlib.h>
+	"arquivo.h"
+
+1652293934 source:c:\users\allan\desktop\pokedex\pokedex\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arquivo.h"
+	"funcoes.h"
+
+1652292934 c:\users\allan\desktop\pokedex\pokedex\arquivo.h
+
+1652289278 source:c:\users\allan\desktop\pokedex\pokedex\arquivo.c
+	<stdio.h>
+	<stdlib.h>
+	"arquivo.h"
+
+1652294179 c:\users\allan\desktop\pokedex\pokedex\funcoes.h
+
