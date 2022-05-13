@@ -11,18 +11,17 @@
 	<stdlib.h>
 	"arquivo.h"
 
-1652293934 source:c:\users\allan\desktop\pokedex\pokedex\main.c
-	<stdio.h>
-	<stdlib.h>
-	"arquivo.h"
-	"funcoes.h"
-
-1652292934 c:\users\allan\desktop\pokedex\pokedex\arquivo.h
-
-1652289278 source:c:\users\allan\desktop\pokedex\pokedex\arquivo.c
+1652453946 source:c:\users\allan\desktop\pokedex\pokedex\main.c
 	<stdio.h>
 	<stdlib.h>
 	"arquivo.h"
 
-1652294179 c:\users\allan\desktop\pokedex\pokedex\funcoes.h
+1652454138 c:\users\allan\desktop\pokedex\pokedex\arquivo.h
+
+1652453414 source:c:\users\allan\desktop\pokedex\pokedex\arquivo.c
+	<stdio.h>
+	<stdlib.h>
+	"arquivo.h"
+
+1652450125 c:\users\allan\desktop\pokedex\pokedex\funcoes.h
 

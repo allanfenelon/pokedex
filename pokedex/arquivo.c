@@ -151,8 +151,8 @@ int tipo_vazio(NO *tp){
 int inserir_tipo(NO *tp, TIPO dados){
     if(tp == NULL) return -1;
     if(tipo_cheio(tp)) return 0;
-    tp->dados[tp->tam] = dados;
-    tp->tam++;
+    tp->dados[tp->tam++] = dados;
+
     return 1;
 }
 
@@ -161,4 +161,39 @@ int consultar_tipo(NO *pk, int pos, TIPO *dados){
     *dados = pk->dados[pos-1];
     return 1;
 
+}
+
+
+void imprime_por_tipo(NO *tp, int tipo){
+    int i;
+    TIPO aux;
+    PK pokemonaux;
+    Lista *pk;
+
+    consultar_tipo(tp, tipo, &aux);
+
+    pk = aux.endereco;
+    i = tamanho(pk);
+
+    for(int j=1; j<=i;j++){
+        consulta_pk(pk, j, &pokemonaux);
+        printf("\n\n Nome: %s\n", pokemonaux.nome);
+        printf(" Score total:%d\n", pokemonaux.score_total);
+    }
+
+
+}
+
+int tamanho_pokedex(NO *tp){
+    if(tp==NULL)return -1;
+    Lista *aux;
+    TIPO pkaux;
+    int i = tamanho_tipo(tp);
+    int soma = 0;
+    for(int j=1; j<=i;j++){
+        consultar_tipo(tp, j, &pkaux);
+        aux = pkaux.endereco;
+        soma= soma + tamanho(aux);
+    }
+    return soma;
 }

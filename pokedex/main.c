@@ -1,81 +1,91 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "arquivo.h"
-#include "funcoes.h"
+
 
 int main(){
-    int gameON = 1;
-    int selecao, opcao;
-    /* LISTA */
+
+    /*DEMONSTRAÇÃO DO USO DAS FUNÇÕES */
+    /*
+    EQUIPE:
+    Allan Pereira Fenelon
+    FRANCISCO JUNIOR PEIXOTO DANTAS
+    */
+
+    /* Estrutura do tipo tipo */
+    NO *tipos;
+    tipos = cria_tipo();
+    /* estrutura tipo */
+    TIPO tpaux; //está no .h
+    /* estrutura do pokemon */
+    PK auxiliar; //está no .h
+    /* Estrutura da Lista */
     Lista *normal, *fogo, *agua, *grama, *voador, *lutador, *veneno, *eletrico,
     *terra, *pedra, *psiquico, *gelo, *inseto, *fantasma, *ferro, *dragao, *sombrio, *fada;
     normal =cria(); fogo=cria(); agua=cria(); grama=cria(); voador=cria(); lutador=cria(); veneno=cria(); eletrico=cria();
     terra=cria(); pedra=cria(); psiquico=cria(); gelo=cria(); inseto=cria(); fantasma=cria(); ferro=cria(); dragao=cria(); sombrio=cria(); fada=cria();
-    /* TIPOS */
-    NO *tipos;
-    tipos = cria_tipo();
-
-    /* estrutura tipo */
-    TIPO tpaux;
-    /* estrutura do pokemon */
-    PK pkaux;
-
-    /* *************  */
-    tpaux.nome = "normal"; tpaux.endereco = normal; inserir_tipo(tipos, tpaux);
-    tpaux.nome = "fogo"; tpaux.endereco = fogo; inserir_tipo(tipos, tpaux);
-    tpaux.nome = "agua"; tpaux.endereco = agua; inserir_tipo(tipos, tpaux);
-    tpaux.nome = "grama"; tpaux.endereco = grama; inserir_tipo(tipos, tpaux);
-    tpaux.nome = "voador"; tpaux.endereco = voador; inserir_tipo(tipos, tpaux);
-    tpaux.nome = "lutador"; tpaux.endereco = lutador; inserir_tipo(tipos, tpaux);
-    tpaux.nome = "veneno"; tpaux.endereco = veneno; inserir_tipo(tipos, tpaux);
-    tpaux.nome = "eletrico"; tpaux.endereco = eletrico; inserir_tipo(tipos, tpaux);
-    tpaux.nome = "terra"; tpaux.endereco = terra; inserir_tipo(tipos, tpaux);
-    tpaux.nome = "pedra"; tpaux.endereco = pedra; inserir_tipo(tipos, tpaux);
-    tpaux.nome = "psiquico"; tpaux.endereco = psiquico; inserir_tipo(tipos, tpaux);
-    tpaux.nome = "gelo"; tpaux.endereco = gelo; inserir_tipo(tipos, tpaux);
-    tpaux.nome = "inseto"; tpaux.endereco = inseto; inserir_tipo(tipos, tpaux);
-    tpaux.nome = "fantasma"; tpaux.endereco = fantasma; inserir_tipo(tipos, tpaux);
-    tpaux.nome = "ferro"; tpaux.endereco = ferro; inserir_tipo(tipos, tpaux);
-    tpaux.nome = "dragao"; tpaux.endereco = dragao; inserir_tipo(tipos, tpaux);
-    tpaux.nome = "sombrio"; tpaux.endereco = normal; inserir_tipo(tipos, tpaux);
-    tpaux.nome = "fada"; tpaux.endereco = fada; inserir_tipo(tipos, tpaux);
-    printf("%d",tamanho_tipo(tipos));
 
 
+    /* Inserir pokemon */
+    printf("\n---- Inserir ----\n");
 
-    while(gameON!=0){
-        imprime();
-        pergunta();
-        scanf("%d", &selecao);
-        switch(selecao){
-            case 1: //consultar
-                system("cls||clear");
-                imprime_tipos(3);
-                opcao = selecao;
-                scanf("%d", &selecao);
-                selecaoop(selecao, opcao, tpaux, pkaux);
-                break;
-            case 2: //Inserir
-                system("cls||clear");
-                imprime_tipos(1);
-                opcao = selecao;
-                scanf("%d", &selecao);
+    auxiliar.nome = "Bulbasaur";
+    auxiliar.ataque = 45;
+    auxiliar.ataque_esp = 65;
+    auxiliar.defesa = 49;
+    auxiliar.defesa_esp =65;
+    auxiliar.hp = 45;
+    auxiliar.tipo = 2;
+    auxiliar.valocidade = 45;
+    auxiliar.score_total = auxiliar.ataque + auxiliar.ataque_esp +auxiliar.defesa + auxiliar.defesa_esp + auxiliar.hp + auxiliar.valocidade;
 
-                break;
-            case 3: // Remover
-                system("cls||clear");
-                imprime_tipos(2);
-                opcao = selecao;
-                scanf("%d", &selecao);
+    tpaux.nome = "inseto"; tpaux.endereco = inseto; inserir_tipo(tipos, tpaux); //add tipo normal
+    inserir_ordenado(inseto, auxiliar); //insere informações do tipo normal
+    printf("\n quantidade de tipos: %d", tamanho_tipo(tipos)); //qtd de tipos
 
-                break;
-            case 4:
-                break;
-            default:
-                break;
+    auxiliar.nome = "Ivysaur";
+    auxiliar.ataque = 62;
+    auxiliar.ataque_esp = 65;
+    auxiliar.defesa = 49;
+    auxiliar.defesa_esp =65;
+    auxiliar.hp = 60;
+    auxiliar.tipo = 1;
+    auxiliar.valocidade = 45;
+    auxiliar.score_total = auxiliar.ataque + auxiliar.ataque_esp +auxiliar.defesa + auxiliar.defesa_esp + auxiliar.hp + auxiliar.valocidade;
+    inserir_ordenado(inseto, auxiliar); //insere informações do tipo normal
+
+     /* imprime pokemons por tipo */
+     printf("\n---- imprime por tipo ----\n");
+    imprime_por_tipo(tipos, 1);
+    /* qtd de pokemons por tipo */
+    printf("\n---- qtd por tipo ----\n");
+    printf("\nTamanho tipo inseto: %d", tamanho(inseto));
+
+    /* busca pokemon */
+    printf("\n---- busca pokedex ----\n");
+    consulta_pk(inseto, 1, &auxiliar);
+    printf("\nO pokemon na posica o 1 eh: %s\n", auxiliar.nome);
+
+    /* tamanho da pokedex */
+    printf("\n---- tam pokedex ----\n");
+    printf("\ntamanho da pokedex:%d", tamanho_pokedex(tipos));
 
 
-        }
+    /* remover pokemon */
+    printf("\n---- Remocao ----\n");
+    auxiliar.nome = "Ivysaur";
+    if(remover_pk(inseto, auxiliar)){
+        printf("\n\nDepois da remocaoo do Ivysaur o tipo inseto tem os pokemons: \n");
+        imprime_por_tipo(tipos, 1);
     }
+
+    /* LIBERA POKEDEX*/
+   apagar_lista(normal); apagar_lista(fogo); apagar_lista(agua); apagar_lista(grama);
+   apagar_lista(voador); apagar_lista(lutador); apagar_lista(veneno); apagar_lista(eletrico);
+    apagar_lista(terra); apagar_lista(pedra); apagar_lista(psiquico);
+    apagar_lista(gelo); apagar_lista(inseto); apagar_lista(fantasma);
+     apagar_lista(ferro); apagar_lista(dragao); apagar_lista(sombrio); apagar_lista(fada);
+    apagar_tipo(tipos);
+
     return 0;
 }

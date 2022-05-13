@@ -108,7 +108,7 @@ void pergunta(){
     printf("\t[3] - Remover pokemon\n");
     printf("\t[4] - SAIR\n");
 }
-
+/*
 void selecaoop(int leitura, int opcao, TIPO tipo, PK pk){
     switch(leitura){
             case 1:
@@ -160,4 +160,4 @@ void selecaoop(int leitura, int opcao, TIPO tipo, PK pk){
 
 }
 
-
+*/
