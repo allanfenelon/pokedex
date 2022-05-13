@@ -5,20 +5,20 @@
 
 int main(){
 
-    /*DEMONSTRAÇÃO DO USO DAS FUNÇÕES */
+    /*DEMONSTRAÃ‡ÃƒO DO USO DAS FUNÃ‡Ã•ES */
     /*
     EQUIPE:
     Allan Pereira Fenelon
-    FRANCISCO JUNIOR PEIXOTO DANTAS
+    Francisco Junior Peixoto Dantas
     */
 
     /* Estrutura do tipo tipo */
     NO *tipos;
     tipos = cria_tipo();
     /* estrutura tipo */
-    TIPO tpaux; //está no .h
+    TIPO tpaux; //estÃ¡ no .h
     /* estrutura do pokemon */
-    PK auxiliar; //está no .h
+    PK auxiliar; //estÃ¡ no .h
     /* Estrutura da Lista */
     Lista *normal, *fogo, *agua, *grama, *voador, *lutador, *veneno, *eletrico,
     *terra, *pedra, *psiquico, *gelo, *inseto, *fantasma, *ferro, *dragao, *sombrio, *fada;
@@ -40,7 +40,7 @@ int main(){
     auxiliar.score_total = auxiliar.ataque + auxiliar.ataque_esp +auxiliar.defesa + auxiliar.defesa_esp + auxiliar.hp + auxiliar.valocidade;
 
     tpaux.nome = "inseto"; tpaux.endereco = inseto; inserir_tipo(tipos, tpaux); //add tipo normal
-    inserir_ordenado(inseto, auxiliar); //insere informações do tipo normal
+    inserir_ordenado(inseto, auxiliar); //insere informaÃ§Ãµes do tipo normal
     printf("\n quantidade de tipos: %d", tamanho_tipo(tipos)); //qtd de tipos
 
     auxiliar.nome = "Ivysaur";
@@ -52,7 +52,7 @@ int main(){
     auxiliar.tipo = 1;
     auxiliar.valocidade = 45;
     auxiliar.score_total = auxiliar.ataque + auxiliar.ataque_esp +auxiliar.defesa + auxiliar.defesa_esp + auxiliar.hp + auxiliar.valocidade;
-    inserir_ordenado(inseto, auxiliar); //insere informações do tipo normal
+    inserir_ordenado(inseto, auxiliar); //insere informaÃ§Ãµes do tipo normal
 
      /* imprime pokemons por tipo */
      printf("\n---- imprime por tipo ----\n");
